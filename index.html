@@ -30,6 +30,17 @@
 	        });
 	      });
 	    }
+	   if ('geolocation' in navigator) {
+	    navigator.geolocation.getCurrentPosition(
+	      function(position) {
+	        const latitude = position.coords.latitude;
+	        const longitude = position.coords.longitude;
+	      },
+	      function(error) {
+	        console.error("ไม่สามารถรับพิกัดได้:", error.message);
+	      }
+	    );
+	  }
 	  </script>
    </body>
 </html>
